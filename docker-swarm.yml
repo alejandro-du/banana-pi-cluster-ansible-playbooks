@@ -1,0 +1,17 @@
+- hosts: bpies_manager
+  become: true
+  tasks:
+    - name: Init swarm cluster
+      shell: docker swarm init --advertise-addr={{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}
+      
+    - name: Retrieve token
+      shell: docker swarm join-token -q worker
+      register: worker_token
+
+- hosts: bpies_workers
+  become: true
+  vars:
+    token: "{{ hostvars[groups['bpies_manager'][0]]['worker_token']['stdout'] }}"
+  tasks:
+    - name: Join workers
+      shell: docker swarm join --token {{ token }} {{ hostvars[groups['bpies_manager'][0]]['ansible_default_ipv4']['address'] }}
