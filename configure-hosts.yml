@@ -1,0 +1,8 @@
+- hosts: bpies_ips
+  become: true
+  tasks:
+    - name: Set hostname
+      shell: hostnamectl set-hostname {{ hostname }}
+      
+    - name: Install Avahi
+      shell: apt-get install avahi-daemon -y

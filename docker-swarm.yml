@@ -1,3 +1,9 @@
+- hosts: bpies
+  become: true
+  tasks:
+    - name: Install Docker
+      shell: apt-get install docker.io -y
+
 - hosts: bpies_manager
   become: true
   tasks:
