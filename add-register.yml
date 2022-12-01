@@ -1,0 +1,5 @@
+- hosts: bpies
+  become: true
+  tasks:
+   - name: Add custom Docker registry
+     script: add-register.sh
