@@ -1,1 +1,1 @@
-echo '{ "insecure-registries" : ["thinkpad.local:5000"] }' > /etc/docker/daemon.json
+echo '{ "insecure-registries" : ["192.168.1.200:5000"] }' > /etc/docker/daemon.json
