@@ -39,7 +39,7 @@ ansible-playbook some-playbook.yml --ask-pass --ask-become-pass
 
 ## Configuring
 
-Change the target group names (the default are `bpies`, `bpies_manager’, and `bpies_workers`) in the **.yml** files before running a playbook if needed.
+Change the target group names (the default are `bpies`, `bpies_manager`, and `bpies_workers`) in the **.yml** files before running a playbook if needed.
 
 ## Available playbooks
 
@@ -51,3 +51,7 @@ Change the target group names (the default are `bpies`, `bpies_manager’, and `
 * **reboot.yml**: Reboots all the nodes
 * **shutdown.yml**: Shuts down all the nodes
 * **temperature.yml**: Prints the temperature of each machine
+
+## Deploying MariaDB
+
+See https://github.com/alejandro-du/mariadb-docker-deployments/tree/armv7
