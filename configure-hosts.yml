@@ -1,6 +1,9 @@
 - hosts: bpies_ips
   become: true
   tasks:
+    - name: Configure LED activity
+      shell: sed '$iecho activity > /sys/class/leds/bananapi-m2-zero:red:pwr/trigger' /etc/rc.local > temp && mv temp /etc/rc.local && chmod +x /etc/rc.local
+
     - name: Set hostname
       shell: hostnamectl set-hostname {{ hostname }}
       
