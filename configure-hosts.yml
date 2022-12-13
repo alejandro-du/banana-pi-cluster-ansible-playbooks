@@ -1,4 +1,4 @@
-- hosts: bpies_ips
+- hosts: bpies
   become: true
   tasks:
     - name: Configure LED activity
